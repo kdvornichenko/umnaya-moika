@@ -1,0 +1,14 @@
+mixin btn(data)
+    if data.isLink
+        a(href=`${data.href}`).btn&attributes(attributes)
+            if data.icon
+                +svg(data.icon)
+            if data.text
+                span.btn__text !{data.text}
+    else
+        button.btn&attributes(attributes)
+            if data.text
+                span.btn__text !{data.text}
+            if data.icon
+                +svg(data.icon)
+                

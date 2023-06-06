@@ -1,0 +1,8 @@
+mixin socials()
+    .socials&attributes(attributes)
+        each link in [{icon:'vk',href:'#'}, {icon:'inst',href:'#'}, {icon:'tiktok',href:'#'},{icon:'youtube',href:'#'},{icon:'telegram',href:'#'}] 
+            +btn({
+                isLink: true,
+                icon: link.icon,
+                href: link.href
+            })(target="_blank", rel="noopener noreferrer").btn--icon.socials__link

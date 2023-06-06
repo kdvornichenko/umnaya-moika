@@ -1,0 +1,51 @@
+.form__input-wrapper
+    position: relative
+    & + .form__input-wrapper
+        margin-top: 14px
+
+.form__input,
+.form__textarea
+    width: 100%
+    padding: 16px 18px
+    background: #F0F0F0
+    border-radius: 10px
+    font-size: 16px
+    line-height: 110%
+    border: 1px solid #F0F0F0
+    +gilroy(r)
+    color: $black
+    transition: $trs
+    @media (max-width: $tab)
+        font-size: 14px
+    &:focus
+        border: 1px solid rgba(green, .5)
+    &:placeholder
+        color: #8C8C8C
+    &.error
+        color: red
+        border: 1px solid red
+
+.form__textarea
+    height: 90px
+    resize: none
+    line-height: 160%
+
+.form__label
+    display: block
+    +gilroy(m)
+    font-size: 16px
+    line-height: 110%
+    margin-bottom: 10px
+    @media (max-width: $tab)
+        font-size: 14px
+
+.form__error
+    position: absolute
+    top: calc(100% + 4px)
+    right: 0
+    color: red
+    font-size: 14px
+    line-height: 110%
+    @media (max-width: $tab)
+        top: calc(100% + 2px)
+        font-size: 12px

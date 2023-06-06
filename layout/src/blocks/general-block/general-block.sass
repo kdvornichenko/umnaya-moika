@@ -1,0 +1,106 @@
+.general-block
+    padding-top: 87px
+    padding-bottom: 42px
+
+    color: $white
+    @media ( max-width: $desktop )
+        padding-top: 78px
+        padding-bottom: 58px
+    @media ( max-width: $mob )
+        padding-top: 22px
+        padding-bottom: 27px
+        text-align: center
+
+.general-block__overheading, .general-block__subprofit
+    &.t-h5
+        font-weight: 500
+
+.general-block__part
+    max-width: 450px
+    h1
+        margin-top: 19px
+        @media ( max-width: $desktop-md )
+            margin-top: 13px
+
+.general-block__profit
+    margin-top: 40px
+
+    display: flex
+    align-items: center
+    column-gap: 27px
+
+    color: $secondary
+    @media ( max-width: $desktop-md )
+        margin-top: 15px
+        column-gap: 16px
+    @media ( max-width: $mob )
+        justify-content: center
+        column-gap: 12px
+
+.general-block__profit-part
+    &.t-h-index
+        font-weight: 900
+
+.general-block__profit-part:last-child
+    text-align: left
+
+.general-block__subprofit
+    margin-top: 30px
+    @media (max-width: $desktop-md )
+        margin-top: 24px
+    @media ( max-width: $mob )
+        margin-top: 10px
+
+.general-block__button
+    margin-top: 50px
+    padding: 20px
+
+    border-radius: 10px
+    background-color: $secondary
+    box-shadow: 0 5px 0 0 $secondary-dark
+    will-change: transform
+    transition: $trs
+    @media ( max-width: $mob )
+        margin: 34px auto 0
+        padding: 16px 20px
+
+    &:hover
+        box-shadow: 0 0 $secondary-dark
+        transform: translateY(5px)
+    .btn__text
+        font-size: 18px
+        line-height: 21px
+        color: $white
+
+.general-block__subtext
+    margin-top: 32px
+
+    max-width: 312px
+    font-size: 16px
+    line-height: 19px
+    @media ( max-width: $mob )
+        font-size: 10px
+        line-height: 12px
+
+        max-width: 233px
+        margin: 24px auto 0
+
+.general-block__picture-holder
+    @media ( max-width: $mob )
+        width: 100vw
+        display: flex
+        justify-content: flex-end
+
+.general-block__img-source
+    position: absolute
+    left: 40vw
+    top: 229px
+    @media ( max-width: $desktop-md )
+        height: 350px
+    @media ( max-width: $tab )
+        height: 300px
+        left: 55vw
+    @media ( max-width: $mob )
+        margin-top: 24px
+        position: unset
+        +yo('height',(375px:113px, 500px:200px))

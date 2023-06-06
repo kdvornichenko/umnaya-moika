@@ -1,0 +1,10 @@
+mixin picture(options)
+    picture
+        if options.srcWebp && !options.src
+            img(type="image/webp" src=`assets/img/webp/${options.srcWebp}`)&attributes(attributes)
+        else if options.srcWebp && options.src
+            source(type="image/webp" srcset=`assets/img/webp/${options.srcWebp}`)
+        if options.src
+            source(type="image/jpeg" srcset=`assets/img/${options.src}`)
+            img(src=`assets/img/${options.src}` alt="")&attributes(attributes)
+    

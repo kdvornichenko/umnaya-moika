@@ -1,0 +1,55 @@
+.header
+    position: fixed
+    width: 100vw
+    top: 0
+    left: 0
+
+    padding-top: 24px
+    padding-bottom: 24px
+
+    z-index: 10
+    transition: $trs-4
+
+    display: flex
+    align-items: center
+    background-color: $bg
+
+.header__inner
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    position: relative
+    @media ( max-width: $tab-sm )
+        justify-content: center
+
+.header__menu
+    display: flex
+    align-items: center
+    column-gap: 50px
+    @media ( max-width: $tab )
+        column-gap: 20px
+    @media ( max-width: $tab-sm )
+        display: none
+
+.header__burger
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    width: 20px
+    height: 14px
+
+    position: absolute
+    left: 0
+    @media ( min-width: $tab-sm )
+        display: none
+
+.header__burger-line
+    width: 100%
+    height: 2px
+    background-color: $primary
+
+.header__burger-line:nth-child(2)
+    transform: translateX(4px)

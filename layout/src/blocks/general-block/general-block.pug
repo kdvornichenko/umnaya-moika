@@ -1,0 +1,18 @@
+mixin general-block
+    section.general-block.container
+        .general-block__part
+            .general-block__overheading.t-h5 Есть свой автосервис?
+            h1.t-h3 
+                | Увеличьте свой
+                br
+                | доход минимум на
+            .general-block__profit
+                .general-block__profit-part.t-h-index 300
+                .general-block__profit-part
+                    div.t-h3 тыс
+                    div.t-h3 ₽/мес
+            .general-block__subprofit.t-h5 с умной робот-мойкой!
+            .general-block__picture-holder
+                +picture({src:'general-block/gb.png',srcWebp:'general-block/gb.webp'})(alt='Мойка').general-block__img-source.general-block__img-source--img
+            +btn({text: 'Получить бизнес-план'})(data-modal-open="plan-model").general-block__button
+            .general-block__subtext Получите пошаговый бизнес-план по запуску робот-мойки со стабильной. прибылью и поддержкой от поставщика

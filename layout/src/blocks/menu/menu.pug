@@ -1,0 +1,3 @@
+mixin menu
+    each item in [{href:'#about', text:'О нас'},{href:'#advantages', text:'Преимущества'},{href:'#benefits', text:'Выгоды'},{href:'#cases', text:'Кейсы'},{href:'#contacts', text:'Контакты'}]
+        a.menu-link.t-menu-link(href=`${item.href}`) !{item.text}
