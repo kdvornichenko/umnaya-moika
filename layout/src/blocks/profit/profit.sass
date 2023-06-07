@@ -1,0 +1,51 @@
+.profit
+    background-color: $bg
+    h2
+        text-align: center
+        span
+            color: $secondary
+
+.profit__content
+    margin-top: 80px
+    img
+        margin-top: -20px
+
+.profit__content-top
+    display: flex
+    justify-content: space-between
+    align-items: center
+    z-index: 1
+    position: relative
+
+    .top__note
+        max-width: 500px
+        line-height: 19px
+
+        color: #999
+
+    .top__legend
+        padding: 33px 38px
+
+        background-color: $white
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05)
+        border-radius: 10px
+
+    .top__legend-title
+        font-size: 24px
+        @media ( max-width: $tab )
+            font-size: 16px
+
+    .top__legend
+        font-weight: 500
+
+    .top__legend-text
+        display: flex
+        align-items: center
+        column-gap: 11px
+        .line
+            height: 2px
+            width: 30px
+            background-color: $secondary
+        .text
+            @media ( max-width: $tab )
+                font-size: 14px

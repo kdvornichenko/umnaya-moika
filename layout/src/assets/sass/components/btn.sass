@@ -8,6 +8,26 @@
         white-space: nowrap
         color: $black
 
+.btn-main
+    padding: 20px
+
+    border-radius: 10px
+    background-color: $secondary
+    box-shadow: 0 5px 0 0 $secondary-dark
+    will-change: transform
+    transition: $trs
+    @media ( max-width: $mob )
+        margin: 34px auto 0
+        padding: 16px 20px
+
+    &:hover
+        box-shadow: 0 0 $secondary-dark
+        transform: translateY(5px)
+    .btn__text
+        font-size: 18px
+        line-height: 21px
+        color: $white
+
 .btn--icon
     @extend .u-center
     border-radius: 100%

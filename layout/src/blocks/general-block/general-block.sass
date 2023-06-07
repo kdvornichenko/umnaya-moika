@@ -1,14 +1,11 @@
 .general-block
     padding-top: 87px
-    padding-bottom: 42px
 
     color: $white
-    @media ( max-width: $desktop )
+    @media ( max-width: $desktop-md )
         padding-top: 78px
-        padding-bottom: 58px
     @media ( max-width: $mob )
         padding-top: 22px
-        padding-bottom: 27px
         text-align: center
 
 .general-block__overheading, .general-block__subprofit
@@ -53,24 +50,6 @@
 
 .general-block__button
     margin-top: 50px
-    padding: 20px
-
-    border-radius: 10px
-    background-color: $secondary
-    box-shadow: 0 5px 0 0 $secondary-dark
-    will-change: transform
-    transition: $trs
-    @media ( max-width: $mob )
-        margin: 34px auto 0
-        padding: 16px 20px
-
-    &:hover
-        box-shadow: 0 0 $secondary-dark
-        transform: translateY(5px)
-    .btn__text
-        font-size: 18px
-        line-height: 21px
-        color: $white
 
 .general-block__subtext
     margin-top: 32px

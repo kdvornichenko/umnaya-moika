@@ -1,0 +1,48 @@
+.advantages
+    color: $white
+    h2
+        text-align: center
+        span
+            color: $secondary
+
+.advantages__content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    +yo('margin-top',(500px:40px, 768px:58px,1920px:90px))
+
+    @media ( max-width: $tab-sm )
+        flex-direction: column
+        align-items: flex-start
+        row-gap: 75px
+        picture
+            align-self: center
+
+.advantages__content-part
+    display: flex
+    flex-direction: column
+    +yo('row-gap',(1024px:50px,1920px:80px))
+
+    .item
+        display: flex
+        align-items: center
+        column-gap: 20px
+
+    .item__icon
+        svg
+            width: 34px
+            height: 34px
+
+    .item__part-title
+        font-weight: normal
+
+    .item__part-text
+        margin-top: 10px
+        max-width: 165px
+
+    .item:nth-child(3)
+        .item__part-text
+            max-width: 265px
+
+.advantages__img
+    +yo('height',(500px:296px,768px:464px,1024px:464px,1920px:876px))

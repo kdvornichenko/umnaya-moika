@@ -1,0 +1,20 @@
+mixin advantages
+    .advantages.container
+        h2.t-h4 
+            | Почему автовладельцы
+            br
+            | предпочитают !{' '}
+            span робот-мойки?
+        .advantages__content
+            .advantages__content-part
+                each item in [{icon:'fast', title:'Быстро', text:'5-7 минут занимает одна мойка'},{icon:'comfortable', title:'Удобно', text:'Клиенту не нужно выходить из машины'},{icon:'brush', title:'Без щеток', text:'Процесс происходит без контакта с поверхностью машины'},{icon:'cheap', title:'Бюджетно', text:'Стоимость одной мойки от 150 рублей!'},]
+                    .item
+                        .item__icon 
+                            +svg(item.icon)
+                        .item__part
+                            .item__part-title.t-h5 !{item.title}
+                            .item__part-text !{item.text}
+            +picture({
+                src:'advantages/advantages.png',
+                srcWebp:'advantages/advantages.webp'
+            })(alt='Робот-Мойка').advantages__img

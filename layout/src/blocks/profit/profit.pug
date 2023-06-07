@@ -1,0 +1,25 @@
+mixin profit
+    .profit.container
+        h2.t-h4
+            | Сколько можно заработать
+            br
+            |
+            span с робот-мойкой?
+        .profit__content
+            .profit__content-top
+                .top__note *Данная информация усреднена, носит ознакомительный характер и для каждого региона рассчитывается индивидуально
+                .top__legend
+                    .top__legend-title Чистая прибыль по месяцам
+                    .top__legend-text 
+                        .line
+                        .text Чистая прибыль, руб.
+            +picture({
+                src:'profit/profit.png',
+                srcWebp:'profit/profit.webp',
+            })(alt='График', width='100%')
+            .profit__content-img-descr Месяц с даты запуска
+            .profit__content-bottom
+                .bottom__labels
+                    .label
+                    .label
+                +btn({text:'Получить спецификацию на робота'}).btn-main
