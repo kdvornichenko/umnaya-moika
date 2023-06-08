@@ -7,21 +7,45 @@
 
 .profit__content
     margin-top: 80px
+    display: flex
+    flex-direction: column
+    @media ( max-width: $tab )
+        margin-top: 40px
+    @media ( max-width: $mob )
+        margin-top: 30px
     img
         margin-top: -20px
+        @media ( max-width: $tab )
+            margin-top: 26px
+        @media ( max-width: $mob )
+            margin-top: 0
 
 .profit__content-top
     display: flex
     justify-content: space-between
     align-items: center
-    z-index: 1
+
     position: relative
+    z-index: 1
+
+    padding-left: 85px
+    @media ( max-width: $tab )
+        order: 4
+        padding-left: 0
+    @media ( max-width: $mob )
+        margin-top: 35px
+        text-align: center
+        order: 4
 
     .top__note
         max-width: 500px
         line-height: 19px
 
         color: #999
+        @media ( max-width: $tab )
+            font-size: 14px
+            width: 100%
+            max-width: 440px
 
     .top__legend
         padding: 33px 38px
@@ -30,13 +54,21 @@
         box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.05)
         border-radius: 10px
 
+        font-weight: 500
+        @media ( max-width: $tab )
+            background-color: transparent
+            box-shadow: none
+            padding: 0
+            transform: translateY(-45%)
+            max-width: 220px
+            width: 100%
+        @media ( max-width: $mob )
+            display: none
+
     .top__legend-title
         font-size: 24px
         @media ( max-width: $tab )
             font-size: 16px
-
-    .top__legend
-        font-weight: 500
 
     .top__legend-text
         display: flex
@@ -49,3 +81,110 @@
         .text
             @media ( max-width: $tab )
                 font-size: 14px
+                color: #999
+
+picture
+    @media ( max-width: $tab )
+        order: 2
+    @media ( max-width: $mob )
+        order: 1
+
+.profit__content-img-descr
+    margin-top: 20px
+    padding-left: 85px
+    @media ( max-width: $tab )
+        order: 3
+        padding-left: 0
+    @media ( max-width: $mob )
+        display: none
+
+.profit__content-img-zoom
+    margin-top: 10px
+
+    text-align: center
+    color: #999
+    text-decoration: underline
+    font-size: 14px
+
+    cursor: pointer
+
+    order: 2
+
+.bottom__labels
+    margin-top: 61px
+
+    display: flex
+    justify-content: center
+    column-gap: 56px
+    @media ( max-width: $tab )
+        order: 1
+        margin-top: 0
+        justify-content: space-between
+        column-gap: 10px
+    @media ( max-width: 650px )
+        flex-direction: column
+        row-gap: 10px
+    @media ( max-width: $mob )
+        margin-top: 35px
+        row-gap: 26px
+        order: 3
+
+    .label
+        width: 100%
+        max-width: 420px
+
+        padding-left: 28px
+        padding-right: 18px
+        +yo('padding-top',(500px:0,768px:22px,1024px:26px,1920px:32px))
+        +yo('padding-bottom',(500px:0,768px:22px,1024px:26px,1920px:32px))
+
+        display: flex
+        align-items: center
+        column-gap: 20px
+
+        border: 1px solid $secondary
+        border-radius: 10px
+        @media ( max-width: $mob )
+            border: none
+        @media ( max-width: $mob )
+            padding: 0
+    .label:first-child
+        @media ( max-width: $tab )
+            max-width: 360px
+        @media ( max-width: $tab-sm )
+            max-width: 260px
+        @media ( max-width: 650px )
+            max-width: 320px
+        svg
+            width: 40px
+            height: 40px
+
+    .label:last-child
+        @media ( max-width: $tab )
+            max-width: 360px
+
+        @media ( max-width: $tab-sm )
+            max-width: 320px
+
+        svg
+            width: 48px
+            height: 48px
+
+    .label__content
+        font-weight: 500
+        +yo('font-size',(768px:16px,1024px:20px,1920px:24px))
+
+    .label__content-text
+        color: $secondary
+
+.profit__btn
+    margin: 62px auto 0
+    @media ( max-width: $tab )
+        margin-top: 43px
+        order: 5
+    @media ( max-width: $mob )
+        width: 100%
+        margin-top: 32px
+        order: 5
+        .btn__text
+            white-space: normal

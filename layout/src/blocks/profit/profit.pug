@@ -16,10 +16,16 @@ mixin profit
             +picture({
                 src:'profit/profit.png',
                 srcWebp:'profit/profit.webp',
-            })(alt='График', width='100%')
+            })(alt='График', width='100%').profit__content-img
             .profit__content-img-descr Месяц с даты запуска
-            .profit__content-bottom
-                .bottom__labels
+            .profit__content-img-zoom.media-min--mob смотреть увеличенный график
+
+            .bottom__labels
+                each label in [{icon:'wallet', title:'Заработок', text:'с 1го дня запуска!'},{icon:'profit', title:'Чистая прибыль составит', text:'минимум 300 000 ₽/мес'}]
                     .label
-                    .label
-                +btn({text:'Получить спецификацию на робота'}).btn-main
+                        +svg(label.icon)
+                        .label__content
+                            .label__content-title !{label.title}
+                            .label__content-text !{label.text}
+                    
+            +btn({text:'Получить спецификацию на робота'}).btn-main.profit__btn
