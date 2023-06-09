@@ -3,70 +3,26 @@ mixin cases
         h2.t-h4 Кейсы
         .cases__cards-wrapper.swiper.swiper-cases
             .cases__cards.swiper-wrapper
-                .cases__card-wrapper.swiper-slide 
-                    .cases__card 
-                        .cases__card-top
-                            +picture({
-                                src:'cases/case1.png',
-                                srcWebp:'cases/case1.webp'
-                            })
-                            .cases__card-top-right 
-                                ul.right__list
-                                    li.right__list-item
-                                        .item__overtitle Дата начала работы
-                                        .item__title Январь 2019г.
-                                    li.right__list-item
-                                        .item__overtitle Средняя чистая прибыль
-                                        .item__title 510 840 руб
-                                    li.right__list-item
-                                        .item__overtitle Точка безубыточности
-                                        .item__title 2 месяца
-                                    li.right__list-item
-                                        .item__overtitle Период окупаемости
-                                        .item__title 12 месяцев
-                        .cases__card-bottom.t-h5
-                            .cases__card-bottom-item МКАД
-                            .cases__card-bottom-item 
-                                .item__title МКАД 26
-                                .item__subtitle Умная Мойка Москва, ул. Барклая
-                            .cases__card-bottom-item Мичуринский
-                            .cases__card-bottom-item Серпухов    
-                .cases__card-wrapper.swiper-slide 
-                    .cases__card 
-                        .cases__card-top
-                            +picture({
-                                src:'cases/case1.png',
-                                srcWebp:'cases/case1.webp'
-                            })
-                            .cases__card-top_right 123123
-                        .cases__card-bottom
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123    
-                .cases__card-wrapper.swiper-slide 
-                    .cases__card 
-                        .cases__card-top
-                            +picture({
-                                src:'cases/case1.png',
-                                srcWebp:'cases/case1.webp'
-                            })
-                            .cases__card-top_right 123123
-                        .cases__card-bottom
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123    
-                .cases__card-wrapper.swiper-slide 
-                    .cases__card 
-                        .cases__card-top
-                            +picture({
-                                src:'cases/case1.png',
-                                srcWebp:'cases/case1.webp'
-                            })
-                            .cases__card-top_right 123123
-                        .cases__card-bottom
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123
-                            .cases__card-bottom-item 123    
+                each slide in [{img:'case1',right:[{overtitle:'Дата начала работы', title:'Январь 2019г.'},{overtitle:'Средняя чистая прибыль', title:'510 840 руб'},{overtitle:'Точка безубыточности', title:'2 месяца'},{overtitle:'Период окупаемости', title:'12 месяцев'}]},{img:'case3',right:[{overtitle:'Дата начала работы', title:'Май 2020'},{overtitle:'Средняя чистая прибыль', title:'488 724 руб'},{overtitle:'Точка безубыточности', title:'1 месяц'},{overtitle:'Период окупаемости', title:'14 месяцев'}]},{img:'case2',right:[{overtitle:'Дата начала работы', title:'Февраль 2021'},{overtitle:'Средняя чистая прибыль', title:'510 840 руб'},{overtitle:'Точка безубыточности', title:'1 месяц'},{overtitle:'Период окупаемости', title:'14 месяцев'}]}]
+                    .cases__card-wrapper.swiper-slide 
+                        .cases__card 
+                            .cases__card-top
+                                .cases__card-img(style=`background-image:url('assets/img/cases/${slide.img}.png')`)
+                                .cases__card-top-right 
+                                    ul.right__list
+                                        each item in slide.right
+                                            li.right__list-item
+                                                .item__overtitle !{item.overtitle} 
+                                                .item__title !{item.title} 
+                            .cases__card-bottom.t-h5
+                                .cases__card-bottom-item МКАД
+                                .cases__card-bottom-item 
+                                    .item__title МКАД 26
+                                    .item__subtitle Умная Мойка Москва, ул. Барклая
+                                .cases__card-bottom-item Мичуринский
+                                .cases__card-bottom-item Серпухов
+        .swiper-navigation
+            .swiper-button-prev
+            .swiper-button-next
+        .swiper-pagination
+                

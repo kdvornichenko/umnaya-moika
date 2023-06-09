@@ -1,7 +1,61 @@
 .cases
     background-color: $bg
+    position: relative
     h2
         text-align: center
+    &.container
+        padding-left: 0
+        padding-right: 0
+        @media ( max-width: $desktop-sm )
+            padding-left: 16px
+            padding-right: 16px
+
+    .cases__cards-wrapper
+        @media ( max-width: $desktop-sm )
+            overflow: unset
+
+    .swiper-navigation
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        z-index: 10
+
+        margin: 0 auto
+
+        width: 100%
+        max-width: 1300px
+
+        display: flex
+        justify-content: space-between
+        align-items: center
+        @media ( max-width: $desktop-sm )
+            bottom: 0
+            top: unset
+            justify-content: center
+            column-gap: 150px
+        @media ( max-width: $tab-sm )
+            display: none
+        .swiper-button-prev, .swiper-button-next
+            color: $primary
+            position: unset
+            &::after
+                @media ( max-width: $desktop-sm )
+                    font-size: 30px
+        .swiper-button-prev
+            left: 0
+        .swiper-button-next
+            right: 0
+    .swiper-pagination
+        z-index: 0
+        @media ( max-width: $mob )
+            bottom: 0 !important
+        .swiper-pagination-bullet
+            background-color: $primary
+            opacity: 1
+            transition: $trs
+        .swiper-pagination-bullet-active
+            background-color: $secondary
 
 .cases__cards
     margin-top: 70px
@@ -19,33 +73,63 @@
 
 .cases__card-top
     display: flex
-    img
-        height: 100%
-        overflow: hidden
+    @media ( max-width: 600px )
+        flex-direction: column
+
+.cases__card-img
+    max-width: 900px
+    max-height: 390px
+    width: 100%
+    background-position: 20%
+    background-size: cover
+    background-repeat: no-repeat
+    @media ( max-width: 600px )
+        height: 200px
 
 .cases__card-top-right
     width: 100%
     max-width: 300px
     display: flex
     align-items: center
+    background-color: $bg
+    @media ( max-width: 600px )
+        max-width: unset
     .right__list
         width: max-content
         width: 210px
 
-        margin-left: auto
-        margin-right: 38px
+        padding-left: 40px
+        @media ( max-width: $desktop-md )
+            padding-top: 20px
+            padding-bottom: 20px
+        @media ( max-width: 600px )
+            columns: 2
+            width: 100%
+            padding-left: 30px
+
+        @media ( max-width: 440px )
+            columns: 1
+            padding-left: 30px
         .right__list-item
             font-weight: 500
             .item__title
                 color: $secondary
                 margin-top: 5px
                 font-size: 24px
+                @media ( max-width: $desktop-sm )
+                    font-size: 20px
+                @media ( max-width: 440px )
+                    margin-top: 0
         .right__list-item:not(:first-child)
             margin-top: 30px
+            @media ( max-width: $desktop-sm )
+                margin-top: 20px
 
 .cases__card-bottom
     display: flex
     justify-content: space-between
+    @media ( max-width: 600px )
+        display: none
 
 .cases__card-bottom-item
     width: 100%
@@ -61,6 +145,8 @@
     color: $secondary
 
     position: relative
+    @media ( max-width: $tab )
+        font-size: 20px
 
 .cases__card-bottom-item:not(:last-child)
     &::after
@@ -76,8 +162,19 @@
 
     .item__title
         color: $white
+
     .item__subtitle
         color: $white
         font-size: 16px
         font-weight: normal
         margin-top: 5px
+        text-align: center
+
+.cases__card-bottom-item:nth-child(3)
+    &::after
+        @media ( max-width: $tab-sm )
+            display: none
+
+.cases__card-bottom-item:last-child
+    @media ( max-width: $tab-sm )
+        display: none
