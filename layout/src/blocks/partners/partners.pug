@@ -1,0 +1,10 @@
+mixin partners
+    section.partners.container
+        h2.t-h4.partners__heading Наши партнеры
+        .partners__logos.media-max--mob
+            +partners-logos
+        .partners__logos-swiper.media-min--mob
+            .swiper.swiper-partners
+                .swiper-wrapper.partners__logos
+                    +partners-logos({class: 'swiper-slide'})
+                .swiper-pagination.swiper-pagination--partners

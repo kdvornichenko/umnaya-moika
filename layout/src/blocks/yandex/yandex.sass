@@ -1,0 +1,24 @@
+.yandex
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    background-color: $bg
+    @media ( max-width: $tab )
+        flex-direction: column
+        row-gap: 53px
+    @media ( max-width: $mob )
+        row-gap: 35px
+
+.yandex__text
+    @media ( max-width: $tab )
+        text-align: center
+    span
+        color: $secondary
+
+.yandex__img-holder
+    +yo('width',(500px:290px,768px:668px,1024px:668px,1920px:780px))
+    +yo('height',(500px:180px,768px:412px,1024px:412px,1920px:480px))
+    .yandex__img
+        width: 100%
+        height: 100%

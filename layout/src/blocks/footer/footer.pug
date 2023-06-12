@@ -1,4 +1,11 @@
-footer.footer
-    .container
-        +logo.footer__logo
+footer.footer.container
+    .footer__top
+        a(href="/").logo&attributes(attributes).footer__logo
+            include ../../assets/img/svg/logo-footer.svg
+        .footer__menu
+            +menu
+    .footer__bottom
+        .footer__bottom-hashtag #умные автомойки 2023
+        a(href='/').footer__bottom-policy Политика конфиденциальнсти
+
     

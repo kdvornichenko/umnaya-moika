@@ -1,0 +1,18 @@
+mixin about
+    section.about.container
+        .about__content-wrapper
+            .about__content
+                ul.about__numbers-list
+                    each item in [{number:'75 000+', text:'автомобилей моем ежемесячно'},{number:'30 000+', text:'отзывов довольных клиентов'},{number:'180+', text:'автомоек установили по всей стране'}]
+                        li.list__item
+                            .list__item-number.t-h4 !{item.number}
+                            .list__item-text !{item.text}
+                .about__part
+                    .about__part-overheading О поставщике
+                    h2.t-h4.about__part-heading Умная мойка - крупнейшая сеть робот автомоек в России
+            +btn({text:'Хочу бизнес-план'}).btn-main.about__btn
+        .about__img-holder 
+            +picture({
+                src:'about/about.png',
+                srcWebp:'about/about.webp'
+            })(alt='Мойка').about__img

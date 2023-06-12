@@ -1,0 +1,23 @@
+mixin washing
+    section.washing.container
+        .washing__wrapper
+            .wasing__video
+                +video({
+                    src:'/washing/video.mov',
+                    poster:'/washing/poster.png'
+                })
+            .washing__content
+                h2.t-h4.waching__content-heading Моем 172 авто в сутки
+                .waching__content-text.waching__content-text--desktop
+                    p Способна вымыть одна наша робот-мойка, и это не предел!
+                    p Убедитесь сами!
+                    p 
+                        | Оцените поток клиентов 
+                        br
+                        |на ускоренной видеозаписи 
+                        br
+                        |с одной из наших точек!
+                .waching__content-text.waching__content-text--mob Способна вымыть одна наша робот-мойка, и это не предел! Убедитесь сами! Оцените поток клиентов на ускоренной видеозаписи с одной из наших точек!
+        +btn({
+            text:'Хочу бизнес-план'
+        }).btn-main.washing__btn

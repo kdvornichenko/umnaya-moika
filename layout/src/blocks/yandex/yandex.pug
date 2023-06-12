@@ -1,0 +1,15 @@
+mixin yandex
+    section.yandex.container
+        h2.yandex__text.t-h4
+            | Умная мойка
+            br
+            | на 
+            span Яндекс.Навигаторе
+            br
+            | и 
+            span Яндекс.Заправках
+        .yandex__img-holder
+            +picture({
+                src:'yandex/yandex.png',
+                srcWebp:'yandex/yandex.webp'
+            })(alt='Карты').yandex__img

@@ -7,11 +7,11 @@ import 'swiper/css/bundle';
 const swiperCases = new Swiper('.swiper-cases', {
     slidesPerView: 1,
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.swiper-button-next--cases',
+        prevEl: '.swiper-button-prev--cases',
     },
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination--cases',
         type: 'bullets',
     },
     breakpoints: {
@@ -24,3 +24,23 @@ const swiperCases = new Swiper('.swiper-cases', {
     },
 });
 swiperCases;
+
+const swiperSupport = new Swiper('.swiper-support', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination--support',
+        type: 'bullets',
+    },
+    spaceBetween: 16,
+});
+swiperSupport;
+
+const swiperPartners = new Swiper('.swiper-partners', {
+    slidesPerView: 1,
+    pagination: {
+        el: '.swiper-pagination--partners',
+        type: 'bullets',
+    },
+    spaceBetween: 16,
+});
+swiperPartners;

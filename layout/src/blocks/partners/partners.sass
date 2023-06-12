@@ -1,0 +1,41 @@
+.partners
+    background-color: $bg
+
+.partners__heading
+    text-align: center
+
+.partners__logos
+    margin-top: 90px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    picture
+        display: flex
+        .lukoil__img
+            +yo('width', (768px:123px,1024px:161px,1920px:211px))
+            +yo('height', (768px:25px,1024px:33px,1920px:43px))
+        .bp__img
+            +yo('width', (768px:71px,1024px:93px,1920px:122px))
+            +yo('height', (768px:94px,1024px:124px,1920px:162px))
+        .rosneft__img
+            +yo('width', (768px:99px,1024px:129px,1920px:169px))
+            +yo('height', (768px:88px,1024px:116px,1920px:152px))
+        .gazprom__img
+            +yo('width', (768px:96px,1024px:126px,1920px:164px))
+            +yo('height', (768px:47px,1024px:61px,1920px:79px))
+
+.partners__logos-swiper
+    .swiper-partners
+        height: 170px
+        .partners__logos
+            margin-top: 0
+        .swiper-wrapper
+            .swiper-slide
+                display: flex
+                align-items: center
+                justify-content: center
+        .swiper-pagination
+            bottom: 0
+            .swiper-pagination-bullet
+                &.swiper-pagination-bullet-active
+                    background-color: $secondary

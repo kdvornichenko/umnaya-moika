@@ -1,0 +1,64 @@
+mixin support
+    section.support.container
+        .support__request
+            h2.t-h4.support__request-heading 
+                | Оставьте заявку 
+                br
+                |на оборудование сейчас
+            .support__request-text и получите бизнес-план вашей автомойки и комплексную поддержку от поставщика!
+            +btn({
+                text:'Хочу бизнес-план'
+            }).btn-main.support__request-btn.media-max--tab
+        .support__includes.support__includes--desktop
+            .support__includes-content
+                .support__includes-heading Что входит в поддержку:
+                ul.support__includes-list
+                    each item in [{icon:'business', text:'Бизнес-план'},{icon:'profit', text:'Финансовый расчет прибыли'},{icon:'list', text:'Список поставщиков химии'},{icon:'location', text:'Подбор локации'},{icon:'marketing', text:'Маркетинг'},{icon:'legal-supp', text:'Юридическое сопровождение'},{icon:'software', text:'Программное обеспечение'},{icon:'help', text:'Помощь в запуске робот-мойки'},{icon:'design', text:'Дизайн-проект'},{icon:'study', text:'Обучение'}]
+                        li.include__item
+                            .include__item-icon
+                                +svg(item.icon)
+                            .include__item-text !{item.text}
+                    li.include__item.u-hidden-v
+                        .include__item-icon
+                        .include__item-text
+                    +btn({
+                        text:'Хочу бизнес-план'
+                    }).btn-main.support__request-btn--list.media-min--tab
+        .support__includes--mob.swiper.swiper-support
+            .swiper-wrapper
+                .swiper-slide
+                    .support__includes-heading Что входит в поддержку:
+                    ul.support__includes-list
+                        each item in [{icon:'business', text:'Бизнес-план'},{icon:'profit', text:'Финансовый расчет прибыли'},{icon:'list', text:'Список поставщиков химии'}]
+                            li.include__item
+                                .include__item-icon
+                                    +svg(item.icon)
+                                .include__item-text !{item.text}
+                .swiper-slide
+                    .support__includes-heading Что входит в поддержку:
+                    ul.support__includes-list
+                        each item in [{icon:'location', text:'Подбор локации'},{icon:'marketing', text:'Маркетинг'},{icon:'legal-supp', text:'Юридическое сопровождение'}]
+                            li.include__item
+                                .include__item-icon
+                                    +svg(item.icon)
+                                .include__item-text !{item.text}
+                .swiper-slide
+                    .support__includes-heading Что входит в поддержку:
+                    ul.support__includes-list
+                        each item in [{icon:'software', text:'Программное обеспечение'},{icon:'help', text:'Помощь в запуске робот-мойки'},{icon:'design', text:'Дизайн-проект'}]
+                            li.include__item
+                                .include__item-icon
+                                    +svg(item.icon)
+                                .include__item-text !{item.text}
+                .swiper-slide
+                    .support__includes-heading Что входит в поддержку:
+                    ul.support__includes-list
+                        each item in [{icon:'study', text:'Обучение'}]
+                            li.include__item
+                                    .include__item-icon
+                                        +svg(item.icon)
+                                    .include__item-text !{item.text}
+            .swiper-pagination.swiper-pagination--support
+        +btn({
+            text:'Хочу бизнес-план'
+        }).btn-main.support__request-btn--after-list

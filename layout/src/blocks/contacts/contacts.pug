@@ -1,0 +1,23 @@
+mixin contacts
+    section.contacts.container
+        h2.t-h4.contacts__heading Контакты
+        .contacts__content
+            .conatcts__socials
+                .socials__heading Подписывайтесь на наши соцсети
+                +socials
+                +btn({
+                    text:'Оставить заявку'
+                }).btn-main.socials__btn.media-max--mob
+            .contacts__info
+                .info__heading Грёза Юрий
+                .info__wrapper
+                    .info__subheading руководитель отдела развития сети
+                    a.info__tel(href="tel:88005502387") 8 (800) 550 23 87
+                    a.info__mail(href="mailto:franchising@intelwash.ru") franchising@intelwash.ru
+                    .info__address 
+                        | Москва ул. Барклая 6, стр 5, офис 506
+                        br
+                        | Бизнес-центр «Барклай плаза»
+            +btn({
+                    text:'Оставить заявку'
+                }).btn-main.socials__btn.media-min--mob

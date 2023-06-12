@@ -36,26 +36,23 @@
             column-gap: 150px
         @media ( max-width: $tab-sm )
             display: none
-        .swiper-button-prev, .swiper-button-next
+        .swiper-button-prev--cases, .swiper-button-next--cases
             color: $primary
             position: unset
             &::after
                 @media ( max-width: $desktop-sm )
                     font-size: 30px
-        .swiper-button-prev
+        .swiper-button-prev--cases
             left: 0
-        .swiper-button-next
+        .swiper-button-next--cases
             right: 0
-    .swiper-pagination
+    .swiper-pagination--cases
         z-index: 0
         @media ( max-width: $mob )
             bottom: 0 !important
         .swiper-pagination-bullet
-            background-color: $primary
-            opacity: 1
-            transition: $trs
-        .swiper-pagination-bullet-active
-            background-color: $secondary
+            &.swiper-pagination-bullet-active
+                background-color: $secondary
 
 .cases__cards
     margin-top: 70px

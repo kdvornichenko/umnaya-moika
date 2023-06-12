@@ -1,0 +1,13 @@
+mixin partners-logos(data)
+    each logo in [{name:'lukoil'},{name:'bp'},{name:'rosneft'},{name:'gazprom'}]
+        if data
+            div(class=data.class)
+                +picture({
+                    src:`partners/${logo.name}.png`,
+                    srcWebp:`partners/${logo.name}.webp`,
+                })(alt=`Партнер - ${logo.name}`, class=`${logo.name}__img`)
+        else
+            +picture({
+                src:`partners/${logo.name}.png`,
+                srcWebp:`partners/${logo.name}.webp`,
+            })(alt=`Партнер - ${logo.name}`, class=`${logo.name}__img`)

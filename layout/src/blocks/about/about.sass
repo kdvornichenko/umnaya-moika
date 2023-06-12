@@ -1,0 +1,89 @@
+.about
+    @media ( max-width: $tab-sm )
+        position: relative
+
+.about__content-wrapper
+    position: relative
+    @media ( max-width: $tab-sm )
+        padding-bottom: 100px
+
+.about__content
+    display: flex
+    justify-content: space-between
+    @media ( max-width: $tab-sm )
+        flex-direction: column-reverse
+
+.about__numbers-list
+    max-width: 450px
+
+    display: flex
+    column-gap: 80px
+    row-gap: 40px
+    flex-wrap: wrap
+    @media ( max-width: $tab )
+        column-gap: 0px
+    @media ( max-width: $tab-sm )
+        flex-direction: column
+        flex-wrap: nowrap
+
+        margin-top: 70px
+    @media ( max-width: $mob )
+        align-items: center
+        row-gap: 30px
+
+        margin-top: 45px
+
+.list__item
+    max-width: 165px
+    @media ( max-width: $tab-sm )
+        text-align: left
+    @media ( max-width: $mob )
+        text-align: center
+
+.list__item-number
+    color: $secondary
+    font-weight: 700
+
+.list__item-text
+    color: $white
+
+.about__part
+    color: $white
+    @media ( max-width: $tab-sm )
+        text-align: center
+
+.about__part-overheading
+    font-weight: 500
+
+.about__part-heading
+    margin-top: 14px
+    max-width: 530px
+    @media ( max-width: $tab-sm )
+        margin-left: auto
+        margin-right: auto
+
+.about__btn
+    position: absolute
+    right: 0
+    bottom: 0
+
+    width: 240px
+    @media ( max-width: $tab-sm )
+        right: 0
+        left: 0
+        margin: 0 auto
+
+.about__img-holder
+    margin-top: -50px
+    display: flex
+    align-items: center
+    justify-content: center
+    @media ( max-width: $tab-sm )
+        position: absolute
+        left: 35vw
+        top: 40%
+    @media ( max-width: $mob )
+        display: none
+    .about__img
+        +yo('width',(768px:615px,1024px:665px,1920px:900px))
+        +yo('height',(768px:314px,1024px:340px,1920px:460px))

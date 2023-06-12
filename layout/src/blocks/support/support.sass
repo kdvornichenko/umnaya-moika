@@ -1,0 +1,144 @@
+.support
+    background-color: $bg
+    display: flex
+    align-items: center
+    justify-content: space-between
+    column-gap: 20px
+    @media ( max-width: $tab )
+        flex-direction: column
+        align-items: flex-start
+
+    &.container
+        @media ( min-width: $tab + 1 )
+            padding-right: 0
+            padding-bottom: 0
+
+.support__request
+    @media ( max-width: $tab )
+        text-align: center
+        width: 100%
+
+.support__request-text
+    margin-top: 23px
+
+    max-width: 333px
+
+    font-weight: 600
+    line-height: 19px
+    @media ( max-width: $tab )
+        max-width: unset
+
+.support__request-btn
+    margin-top: 58px
+    width: 240px
+
+.support__includes
+    background-color: $secondary
+    border-top-left-radius: 10px
+
+    padding: 59px 0 48px 78px
+
+    width: 100%
+    max-width: 1050px
+    @media ( max-width: $tab )
+        border-radius: 10px
+        margin-top: 40px
+        padding: 40px
+
+.support__includes--desktop
+    @media ( max-width: 800px )
+        display: none
+
+.support__includes--mob
+    width: 100%
+    &.swiper-support
+        @media ( min-width: 800px + 1 )
+            display: none
+    .swiper-wrapper
+        margin-top: 35px
+    .swiper-slide
+        background-color: $secondary
+        padding: 25px 30px 40px
+        border-radius: 10px
+        box-sizing: border-box
+        height: 300px
+        .support__includes-list
+            margin: 25px auto 0
+
+            width: 220px
+
+            columns: unset
+            flex-wrap: nowrap
+            max-height: unset
+            .include__item-icon
+                width: 45px
+                height: 45px
+                padding: 8px
+
+.support__includes-heading
+    color: $white
+    font-weight: 500
+    +yo('font-size',(500px:16px, 768px:20px, 1920px:24px))
+    @media ( max-width: 800px )
+        text-align: center
+
+.support__includes-list
+    margin-top: 55px
+    columns: 2
+    display: flex
+    flex-direction: column
+    row-gap: 20px
+    flex-wrap: wrap
+    max-height: 410px
+    @media ( max-width: $tab )
+        position: relative
+        max-height: 324px
+        margin-top: 50px
+    @media ( max-width: 800px )
+        max-height: 410px
+
+.support__request-btn--list
+    @media ( max-width: $tab )
+        // position: absolute
+        bottom: 0
+        right: 0
+
+        background-color: $bg
+        box-shadow: 0 5px 0 0 #999
+        .btn__text
+            color: $primary
+    @media ( max-width: 800px )
+        display: none
+
+.support__request-btn--after-list
+    display: none
+    @media ( max-width: 800px )
+        display: block
+        width: 240px
+        margin: 30px auto 0
+
+.include__item
+    display: flex
+    align-items: center
+    column-gap: 15px
+    &.u-hidden-v
+        @media ( max-width: 800px )
+            display: none
+
+.include__item-text
+    max-width: 153px
+
+    color: $white
+    font-weight: 500
+    line-height: 19px
+
+.include__item-icon
+    width: 65px
+    height: 65px
+    border-radius: 6px
+    background-color: $white
+    padding: 12px
+    box-sizing: border-box
+    svg
+        width: 100%
+        height: 100%

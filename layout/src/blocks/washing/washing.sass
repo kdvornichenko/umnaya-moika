@@ -1,0 +1,84 @@
+.washing
+    background-color: $bg
+    @media ( min-width: 1000px + 1 )
+        padding-right: 0
+
+.washing__wrapper
+    display: flex
+    align-items: center
+    column-gap: 36px
+    margin: 0 auto
+    @media ( max-width: 1000px )
+        flex-direction: column
+
+.wasing__video
+    border-radius: 10px
+    overflow: hidden
+    +yo('width', (1024px:622px,1920px:700px))
+    +yo('height', (1024px:440px,1920px:440px))
+    @media ( max-width: 1000px )
+        width: 100%
+        border-bottom-left-radius: 0
+        border-bottom-right-radius: 0
+    @media ( max-width: $mob )
+        height: 180px
+    .video
+        height: 100%
+        &::before
+            @media ( max-width: $mob )
+                bottom: 0
+                margin: auto 0
+.washing__content
+    padding: 52px 0 83px 56px
+
+    flex: 1
+
+    height: 440px
+    width: 100%
+    max-width: 420px
+
+    background-color: $white
+    border-radius: 10px
+    @media ( max-width: $tab )
+        padding: 30px
+
+    @media ( max-width: 1000px )
+        width: 100%
+        max-width: 100%
+        padding: 40px
+
+        border-top-left-radius: 0
+        border-top-right-radius: 0
+
+.waching__content-heading
+    max-width: 220px
+
+    color: $secondary
+    @media ( max-width: 1000px )
+        max-width: unset
+
+.waching__content-text
+    font-weight: 500
+    line-height: 19px
+
+.waching__content-text--desktop
+    margin-top: 65px
+    max-width: 240px
+
+    display: flex
+    flex-direction: column
+    row-gap: 25px
+    @media ( max-width: 1000px )
+        display: none
+
+.waching__content-text--mob
+    margin-top: 17px
+    @media ( min-width: 1000px + 1 )
+        display: none
+
+.washing__btn
+    width: 240px
+    margin-left: auto
+    margin-right: auto
+
+    +yo('margin-top',(500px:48px,768px:58px,1024px:77px,1920px:87px))
