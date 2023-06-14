@@ -75,10 +75,10 @@
 
 .cases__card-img
     max-width: 900px
-    max-height: 390px
+    max-height: 105%
     width: 100%
     background-position: 20%
-    background-size: cover
+    background-size: 105%
     background-repeat: no-repeat
     @media ( max-width: 600px )
         height: 200px
@@ -89,6 +89,9 @@
     display: flex
     align-items: center
     background-color: $bg
+    padding: 20px 0
+    @media ( max-width: $tab )
+        padding: 0
     @media ( max-width: 600px )
         max-width: unset
     .right__list
