@@ -44,14 +44,20 @@ formMessanger.addEventListener('change', () => {
 
 form.addEventListener('submit', (event) => {
     event.preventDefault(); // предотвращает перезагрузку страницы
-    const url = 'https://script.google.com/macros/s/AKfycbyGpNU3ak8Jkmlsg7BcVxaaTfvlruUMdofRcFl_e2VKq43m_Q6Df8kycwoFLZKtAeRy/exec';
+    const url = 'https://script.google.com/macros/s/AKfycbzAFV4AdtRx1hLUwjOVjWNZ6j2ol-z1_bK7NcsB5Y1_1ZjO0pdoAV1Tpf1WJU54IUTD/exec';
     axios.post(url, {
         p1: nameValue,
         p2: emailValue,
         p3: telValue,
         p4: messangerValue,
-    }).then(() => {
-        console.log('success');
+    }, {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST',
+            'Access-Control-Allow-Headers': 'Content-Type',
+        },
+    }).then(response => {
+        console.log(response);
     }).catch(error => {
         console.error(error);
     });
