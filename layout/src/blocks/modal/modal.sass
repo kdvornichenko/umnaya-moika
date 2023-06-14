@@ -1,5 +1,4 @@
 .modal
-    z-index: 3
     position: fixed
     top: 0
     left: 0
@@ -8,14 +7,20 @@
     +vh
 
     pointer-events: none
+    z-index: 3
 
 // Active state
 .modal--active
     pointer-events: auto
+    z-index: 25
 
     .modal__overlay
         pointer-events: auto
         opacity: 1
+
+[data-modal="modal-menu"]
+    &.modal--active
+        z-index: 3
 
 // Overlay
 .modal__overlay
@@ -91,6 +96,7 @@
         opacity: 0
 
         @media (max-width: $mob)
+            max-width: 100%
             width: 100%
 
 .modal--center.modal--active .modal__container

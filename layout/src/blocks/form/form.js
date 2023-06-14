@@ -1,64 +1,78 @@
 import axios from 'axios';
+import { close } from '../modal/modal';
 
-const form = document.getElementById('form');
-const formName = form.querySelector('input[name="name"]');
-const formEmail = form.querySelector('input[name="email"]');
-const formTel = form.querySelector('input[name="tel"]');
-const formMessanger = form.querySelector('select[name="messanger"]');
-// const formBtn = form.querySelector('button.btn');
+const modalPopup = document.querySelectorAll('[data-modal*="modal-popup"]');
+const form = document.querySelectorAll('#form');
 
-let nameValue;
-let emailValue;
-let telValue;
-let messangerValue = formMessanger.options[formMessanger.selectedIndex].text;
-// let URL;
+if (form.length) {
+    const formName = document.querySelectorAll('input[name="name"]');
+    const formEmail = document.querySelectorAll('input[name="email"]');
+    const formTel = document.querySelectorAll('input[name="tel"]');
+    const formMessanger = form[0].querySelector('select[name="messanger"]');
 
-formName.addEventListener('input', () => {
-    nameValue = formName.value;
-    // changeURL();
-});
-formEmail.addEventListener('input', () => {
-    emailValue = formEmail.value;
-    // changeURL();
-});
-formTel.addEventListener('input', () => {
-    telValue = formTel.value;
-    // changeURL();
-});
-formMessanger.addEventListener('change', () => {
-    messangerValue = formMessanger.options[formMessanger.selectedIndex].text;
-    // changeURL();
-});
+    let nameValue;
+    let emailValue;
+    let telValue;
+    let messangerValue = formMessanger.options[formMessanger.selectedIndex].text;
+    let URL;
 
-// function changeURL() {
-//     URL = `https://script.google.com/macros/s/AKfycby30uoPj6QPz3INjKcZciQEuOE38STWjTSpLBcRu1vMiYQgss-hkSBsVx33zpou1KFb/exec?p1=${nameValue}&p2=${emailValue}&p3=${telValue}&p4=${messangerValue}`;
-// }
-
-// formBtn.addEventListener('click', () => {
-//     axios.post(URL).then(response => {
-//         console.log(response);
-//     }).catch(error => {
-//         console.error(error);
-//     });
-// });
-
-form.addEventListener('submit', (event) => {
-    event.preventDefault(); // предотвращает перезагрузку страницы
-    const url = 'https://script.google.com/macros/s/AKfycbzAFV4AdtRx1hLUwjOVjWNZ6j2ol-z1_bK7NcsB5Y1_1ZjO0pdoAV1Tpf1WJU54IUTD/exec';
-    axios.post(url, {
-        p1: nameValue,
-        p2: emailValue,
-        p3: telValue,
-        p4: messangerValue,
-    }, {
-        headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET, POST',
-            'Access-Control-Allow-Headers': 'Content-Type',
-        },
-    }).then(response => {
-        console.log(response);
-    }).catch(error => {
-        console.error(error);
+    formName.forEach((item) => {
+        item.addEventListener('input', () => {
+            nameValue = item.value;
+            changeURL();
+        });
     });
-});
+
+    formEmail.forEach((item) => {
+        item.addEventListener('input', () => {
+            emailValue = item.value;
+            changeURL();
+        });
+    });
+
+    formTel.forEach((item) => {
+        item.addEventListener('input', () => {
+            telValue = item.value;
+            changeURL();
+        });
+    });
+
+    formMessanger.addEventListener('change', () => {
+        messangerValue = formMessanger.options[formMessanger.selectedIndex].text;
+        changeURL();
+    });
+
+
+    function changeURL() {
+        URL = `https://script.google.com/macros/s/AKfycbw4izXnHm15xXFTfHHQXzqtsTviW0qcgXABvbjdnKaBvQ_60ttWiSsXBPQZjKaQvwSY-Q/exec?p1=${nameValue}&p2=${emailValue}&p3=${telValue}&p4=${messangerValue}`;
+    }
+
+    modalPopup.forEach((modal) => {
+        const btn = modal.querySelector('.btn');
+        const closeIcon = modal.querySelector('.modal__close');
+        modal.addEventListener('click', (e) => {
+            if (e.target === closeIcon || e.target.parentNode === closeIcon) {
+                close(modal);
+            }
+            if (e.target === btn || e.target.parentNode === btn) {
+                e.preventDefault;
+                if (!modal.querySelector('select[name = "messanger"]')) {
+                    messangerValue = '';
+                }
+                setTimeout(() => {
+                    if (!btn.disabled) {
+                        axios.post(URL)
+                            .then(showLoader(btn.querySelector('.btn__text')))
+                            .catch((error) => console.error(console.error(error)))
+                            .finally(() => {
+                                close(modal);
+                                modal.querySelector('#form').reset();
+                                hideLoader(btn.querySelector('.btn__text'));
+                                window.location = '/thankyou.html';
+                            });
+                    }
+                }, 200);
+            }
+        });
+    });
+}

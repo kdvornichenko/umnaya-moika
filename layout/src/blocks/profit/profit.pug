@@ -1,5 +1,5 @@
 mixin profit
-    section.profit.container
+    section.profit.container#benefits
         h2.t-h4
             | Сколько можно заработать
             br
@@ -28,4 +28,4 @@ mixin profit
                             .label__content-title !{label.title}
                             .label__content-text !{label.text}
                     
-            +btn({text:'Получить спецификацию на робота'}).btn-main.profit__btn
+            +btn({text:'Получить спецификацию на робота'})(data-modal-open='modal-popup').btn-main.profit__btn

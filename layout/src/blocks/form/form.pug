@@ -1,6 +1,6 @@
 //- Пример формы с валидацией
 mixin form
-    form(method='POST' data-form="form" data-form-error="поле не должно быть пустым")#form
+    form(onsubmit="return false" data-form="form" data-form-error="поле не должно быть пустым")#form
         .form__input-wrapper
             input(name="name" type="text" placeholder="Имя").form__input.validate
             span.form__error
@@ -14,4 +14,4 @@ mixin form
             block
         +btn({
             text: 'Отправить заявку',
-        })(data-submit type='submit').btn.form__submit.btn-main
+        })(data-submit).btn.form__submit.btn-main

@@ -19,40 +19,44 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
+const PAGES = fs
+    .readdirSync(PAGES_DIR)
+    .filter(fileName => fileName.endsWith('.pug'));
 
 const MODALS_DIR = `${PATHS.src}/modals/`;
-const MODALS = fs.readdirSync(MODALS_DIR).filter((fileName) => fileName.endsWith('.pug'));
+const MODALS = fs
+    .readdirSync(MODALS_DIR)
+    .filter(fileName => fileName.endsWith('.pug'));
 
 const beautifyOptions = new BeautifyHtmlWebpackPlugin({
-    indent_size: 4,
-    indent_char: ' ',
-    indent_with_tabs: false,
-    editorconfig: false,
-    eol: '\n',
-    end_with_newline: false,
-    indent_level: 0,
-    preserve_newlines: true,
-    max_preserve_newlines: 2,
-    space_in_paren: false,
-    space_in_empty_paren: false,
-    jslint_happy: false,
-    space_after_anon_function: false,
-    space_after_named_function: false,
-    brace_style: 'collapse',
-    unindent_chained_methods: false,
-    break_chained_methods: false,
-    keep_array_indentation: false,
-    unescape_strings: false,
-    wrap_line_length: 0,
-    e4x: false,
-    comma_first: false,
-    operator_position: 'before-newline',
-    indent_empty_lines: false,
-    templating: ['auto'],
+    'indent_size': 4,
+    'indent_char': ' ',
+    'indent_with_tabs': false,
+    'editorconfig': false,
+    'eol': '\n',
+    'end_with_newline': false,
+    'indent_level': 0,
+    'preserve_newlines': true,
+    'max_preserve_newlines': 2,
+    'space_in_paren': false,
+    'space_in_empty_paren': false,
+    'jslint_happy': false,
+    'space_after_anon_function': false,
+    'space_after_named_function': false,
+    'brace_style': 'collapse',
+    'unindent_chained_methods': false,
+    'break_chained_methods': false,
+    'keep_array_indentation': false,
+    'unescape_strings': false,
+    'wrap_line_length': 0,
+    'e4x': false,
+    'comma_first': false,
+    'operator_position': 'before-newline',
+    'indent_empty_lines': false,
+    'templating': ['auto'],
 });
 
-const pugToHtml = PAGES.map((page) => {
+const pugToHtml = PAGES.map(page => {
     const pageName = page.substring(0, page.length - 4);
     let chunks = ['runtime', 'vendors', 'common'];
 
@@ -64,15 +68,17 @@ const pugToHtml = PAGES.map((page) => {
             chunks.push('index');
     }
 
-    return new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}`,
-        filename: pageName + '.html',
-        chunks,
-        title: `${page.replace(/\.pug/, '')}`,
-        minify: {
-            removeAttributeQuotes: false,
-        },
-    });
+    return (
+        new HtmlWebpackPlugin({
+            template: `${PAGES_DIR}/${page}`,
+            filename: pageName + '.html',
+            chunks,
+            title: `${page.replace(/\.pug/, '')}`,
+            minify: {
+                removeAttributeQuotes: false,
+            },
+        })
+    );
 });
 
 module.exports = {
@@ -219,7 +225,7 @@ module.exports = {
 
         // PUG modals
         ...MODALS.map(
-            (modal) =>
+            modal =>
                 new HtmlWebpackPlugin({
                     inject: false,
                     template: `${MODALS_DIR}/${modal}`,
@@ -227,7 +233,7 @@ module.exports = {
                     minify: {
                         removeAttributeQuotes: false,
                     },
-                })
+                }),
         ),
         beautifyOptions,
     ],

@@ -2,25 +2,96 @@
     border-radius: 10px
 
 .modal__popup
+    position: relative
     padding: 46px 66px 50px
     background-color: $bg
+    @media ( max-width: $tab )
+        padding: 20px 40px 40px
+
+.modal__close
+    width: 40px
+    height: 40px
+    position: absolute
+    right: 0
+    top: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    .modal__close-icon
+        width: 14px
+        height: 2px
+        background-color: #999
+        transform: rotate(45deg)
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            background-color: inherit
+            width: inherit
+            height: inherit
+            transform: rotate(90deg)
 
 .modal__popup-top
     text-align: center
+
+.modal__popup-heading
+    font-size: 24px
+    font-weight: 700
+    line-height: 30px
+    @media ( max-width: $tab )
+        max-width: 190px
+        margin: 0 auto
 
 .modal__popup-text
     margin-top: 14px
     line-height: 19px
     font-weight: 500
+    @media ( max-width: $tab )
+        display: none
 
 form
     margin-top: 38px
+    @media ( max-width: $tab )
+        margin-top: 30px
     .modal__popup-messanger
         margin-top: 40px
+        @media ( max-width: $tab )
+            margin-top: 20px
     .messanger__heading
         font-weight: 500
         text-align: center
+        @media ( max-width: $tab )
+            font-size: 14px
     .messanger__select
         margin-top: 16px
     .btn
+        width: 240px
         margin: 35px auto 0
+        @media ( max-width: $tab )
+            margin-top: 24px
+            width: 100%
+
+.modal--modal-popup--request
+    .modal__popup
+        padding: 0
+        @media ( max-width: $tab )
+            padding: 0
+
+    .modal__close
+        .modal__close-icon
+            background-color: $white
+
+    .modal__popup-top
+        background-color: $secondary
+        padding: 46px 66px 50px
+        color: $white
+        @media ( max-width: $tab )
+            padding: 20px 40px 40px
+
+    form
+        margin-top: 0
+        padding: 58px 90px 50px
+        @media ( max-width: $tab )
+            padding: 40px

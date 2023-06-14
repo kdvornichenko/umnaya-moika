@@ -8,7 +8,7 @@ mixin support
             .support__request-text и получите бизнес-план вашей автомойки и комплексную поддержку от поставщика!
             +btn({
                 text:'Хочу бизнес-план'
-            }).btn-main.support__request-btn.media-max--tab
+            })(data-modal-open="modal-popup").btn-main.support__request-btn.media-max--tab
         .support__includes.support__includes--desktop
             .support__includes-content
                 .support__includes-heading Что входит в поддержку:
@@ -23,7 +23,7 @@ mixin support
                         .include__item-text
                     +btn({
                         text:'Хочу бизнес-план'
-                    }).btn-main.support__request-btn--list.media-min--tab
+                    })(data-modal-open="modal-popup").btn-main.support__request-btn--list.media-min--tab
         .support__includes--mob.swiper.swiper-support
             .swiper-wrapper
                 .swiper-slide
@@ -61,4 +61,4 @@ mixin support
             .swiper-pagination.swiper-pagination--support
         +btn({
             text:'Хочу бизнес-план'
-        }).btn-main.support__request-btn--after-list
+        })(data-modal-open="modal-popup").btn-main.support__request-btn--after-list

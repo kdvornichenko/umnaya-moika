@@ -1,5 +1,5 @@
 mixin about
-    section.about.container
+    section.about.container#about
         .about__content-wrapper
             .about__content
                 ul.about__numbers-list
@@ -10,7 +10,7 @@ mixin about
                 .about__part
                     .about__part-overheading О поставщике
                     h2.t-h4.about__part-heading Умная мойка - крупнейшая сеть робот автомоек в России
-            +btn({text:'Хочу бизнес-план'}).btn-main.about__btn
+            +btn({text:'Хочу бизнес-план'})(data-modal-open="modal-popup").btn-main.about__btn
         .about__img-holder 
             +picture({
                 src:'about/about.png',

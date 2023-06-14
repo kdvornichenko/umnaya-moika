@@ -11,6 +11,7 @@ import '~/blocks/message-modal/message-modal';
 import '~/blocks/video/video';
 import '~/blocks/form/form';
 import '~/js/components/swiper';
+import '~/js/helpers/scroll-to-anchor';
 
 // import '~/blocks/scroll/scroll';
 // import '~/blocks/header/header';

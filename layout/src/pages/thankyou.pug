@@ -1,0 +1,35 @@
+html(lang='ru')
+    include ../templates/mixins.pug
+    include ../templates/head.pug
+    
+    body
+        main.thankyou-page
+            .thankyou__modal
+                .modal__top
+                    +logo
+                    +socials
+                .modal__text
+                    h1.t-h4.modal__text-heading 
+                        |Благодарим 
+                        br
+                        |за обращение!
+                    .modal__text-message 
+                        |Мы получили ваши контактные данные. 
+                        br
+                        |Информация будет направлена вам в ближайшее время.
+                    .modal__text-btns
+                        +btn({
+                            isLink: true,
+                            text:'Вернуться на сайт франшизы',
+                            href:'/'
+                        }).btn-main
+                        +btn({
+                            isLink: true,
+                            text:'Перейти на сайт компании',
+                            href:'/'
+                        }).btn-main
+                    .modal__socials-mob
+                        +socials
+                    .modal__bottom
+                        .modal__bottom-hashtag #умные автомойки 2023
+                        a(href='#' target="_blank").modal__bottom-policy Политика конфиденциальнсти

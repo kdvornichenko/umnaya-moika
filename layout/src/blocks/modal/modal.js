@@ -15,13 +15,18 @@ export const init = () => {
     // Open
     $.delegate('[data-modal-open]', (e, el) => {
         const modal = $.qs(`[data-modal="${el.dataset.modalOpen}"]`);
+        const overlay = modal.querySelector('.modal__overlay');
+        const burger = document.querySelector('.header__burger');
         const modalName = el.dataset.modalOpen;
+
         if (!modal) return false;
         if (modalName === 'modal-menu') {
             setTimeout(() => {
-                el.dataset.modalClose = 'modal-menu';
-                delete el.dataset.modalOpen;
-            }, 500);
+                burger.dataset.modalClose = 'modal-menu';
+                overlay.dataset.modalClose = 'modal-menu';
+                delete burger.dataset.modalOpen;
+                delete overlay.dataset.modalOpen;
+            }, 0);
         }
         open(modal);
     });
@@ -34,13 +39,18 @@ export const init = () => {
     // Close
     $.delegate('[data-modal-close]', (e, el) => {
         const modal = $.qs(`[data-modal="${el.dataset.modalClose}"]`);
-        const modalName = el.dataset.modalOpen;
+        const overlay = modal.querySelector('.modal__overlay');
+        const modalName = el.dataset.modalClose;
+        const burger = document.querySelector('.header__burger');
+
         if (!modal) return false;
         if (modalName === 'modal-menu') {
             setTimeout(() => {
-                el.dataset.modalOpen = 'modal-menu';
-                delete el.dataset.modalClose;
-            }, 500);
+                burger.dataset.modalOpen = 'modal-menu';
+                overlay.dataset.modalOpen = 'modal-menu';
+                delete burger.dataset.modalClose;
+                delete overlay.dataset.modalClose;
+            }, 100);
         }
         close(modal);
     });

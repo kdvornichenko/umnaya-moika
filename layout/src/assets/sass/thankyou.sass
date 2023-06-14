@@ -1,0 +1,108 @@
+.thankyou-page
+    height: 100vh
+    background-image: url('../img/thankyou-page/thankyou-page.png')
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-top: 0
+    @media ( max-width: $tab )
+        padding: 0 12px
+    @media ( max-width: $tab )
+        padding: 0 40px
+    @media ( max-width: 580px )
+        padding: 0
+        height: 100%
+        background-color: $bg
+        background-image: none
+        display: block
+
+.thankyou__modal
+    width: 100%
+    max-width: 1200px
+    background: $bg
+    padding: 40px
+    border-radius: 10px
+    @media ( max-width: 580px )
+        padding: 28px
+        height: max-content
+
+.modal__top
+    display: flex
+    justify-content: space-between
+    @media ( max-width: 580px )
+        justify-content: center
+    .socials
+        align-items: center
+        column-gap: 12px
+        @media ( max-width: 580px )
+            display: none
+
+.modal__text
+    margin-top: 9px
+    text-align: center
+
+.modal__text-heading
+    line-height: 59px
+    @media ( max-width: $tab-sm + 1 )
+        margin-top: 83px
+        br
+            display: none
+    @media ( max-width: 580px )
+        margin-top: 48px
+        br
+            display: block
+
+.modal__text-message
+    margin-top: 16px
+    line-height: 19px
+    font-weight: 500
+    @media ( max-width: 580px )
+        font-size: 14px
+
+.modal__text-btns
+    max-width: 580px
+
+    margin: 60px auto 0
+
+    display: flex
+    justify-content: space-between
+    align-items: center
+    column-gap: 10px
+    row-gap: 20px
+    flex-wrap: wrap
+    @media ( max-width: 580px )
+        margin-top: 48px
+
+    .btn
+        margin: auto
+        width: 240px
+        .btn__text
+            font-size: 16px
+
+.modal__socials-mob
+    margin-top: 55px
+    @media ( min-width: 580px + 1px )
+        display: none
+    .socials
+        justify-content: center
+        column-gap: 14px
+
+.modal__bottom
+    margin-top: 55px
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    text-align: right
+    font-size: 18px
+    font-weight: 500
+    @media ( max-width: $tab-sm + 1 )
+        align-items: center
+        text-align: center
+    @media ( max-width: 580px )
+        margin-top: 25px
+        font-size: 14px
+    a.modal__bottom-policy
+        text-decoration: underline

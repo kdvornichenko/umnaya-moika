@@ -1,5 +1,5 @@
 mixin contacts
-    section.contacts.container
+    section.contacts.container#contacts
         h2.t-h4.contacts__heading Контакты
         .contacts__content
             .conatcts__socials
@@ -7,7 +7,7 @@ mixin contacts
                 +socials
                 +btn({
                     text:'Оставить заявку'
-                }).btn-main.socials__btn.media-max--mob
+                })(data-modal-open="modal-popup--request").btn-main.socials__btn.media-max--mob
             .contacts__info
                 .info__heading Грёза Юрий
                 .info__wrapper
@@ -20,4 +20,4 @@ mixin contacts
                         | Бизнес-центр «Барклай плаза»
             +btn({
                     text:'Оставить заявку'
-                }).btn-main.socials__btn.media-min--mob
+                })(data-modal-open="modal-popup--request").btn-main.socials__btn.media-min--mob
