@@ -15,12 +15,14 @@ export const init = () => {
     // Open
     $.delegate('[data-modal-open]', (e, el) => {
         const modal = $.qs(`[data-modal="${el.dataset.modalOpen}"]`);
-        // const modalName = el.dataset.modalOpen;
+        const modalName = el.dataset.modalOpen;
         if (!modal) return false;
-        setTimeout(() => {
-            el.dataset.modalClose = 'modal-menu';
-            delete el.dataset.modalOpen;
-        }, 500);
+        if (modalName === 'modal-menu') {
+            setTimeout(() => {
+                el.dataset.modalClose = 'modal-menu';
+                delete el.dataset.modalOpen;
+            }, 500);
+        }
         open(modal);
     });
 
@@ -32,14 +34,14 @@ export const init = () => {
     // Close
     $.delegate('[data-modal-close]', (e, el) => {
         const modal = $.qs(`[data-modal="${el.dataset.modalClose}"]`);
+        const modalName = el.dataset.modalOpen;
         if (!modal) return false;
-
-
-        setTimeout(() => {
-            el.dataset.modalOpen = 'modal-menu';
-            delete el.dataset.modalClose;
-        }, 500);
-
+        if (modalName === 'modal-menu') {
+            setTimeout(() => {
+                el.dataset.modalOpen = 'modal-menu';
+                delete el.dataset.modalClose;
+            }, 500);
+        }
         close(modal);
     });
 };

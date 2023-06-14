@@ -4,15 +4,16 @@
         margin-top: 14px
 
 .form__input,
-.form__textarea
+.form__textarea,
+.form__select
     width: 100%
     padding: 16px 18px
-    background: #F0F0F0
+    background: #fff
     border-radius: 10px
     font-size: 16px
     line-height: 110%
-    border: 1px solid #F0F0F0
-    +gilroy(r)
+    border: 1px solid #fff
+    +gilroy(m)
     color: $black
     transition: $trs
     @media (max-width: $tab)
@@ -20,7 +21,7 @@
     &:focus
         border: 1px solid rgba(green, .5)
     &:placeholder
-        color: #8C8C8C
+        color: #999
     &.error
         color: red
         border: 1px solid red
@@ -41,10 +42,10 @@
 
 .form__error
     position: absolute
-    top: calc(100% + 4px)
+    top: calc(100% + 1px)
     right: 0
     color: red
-    font-size: 14px
+    font-size: 12px
     line-height: 110%
     @media (max-width: $tab)
         top: calc(100% + 2px)

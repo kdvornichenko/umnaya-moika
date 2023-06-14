@@ -9,6 +9,7 @@ import '~/js/init/selects';
 import '~/blocks/loader/loader';
 import '~/blocks/message-modal/message-modal';
 import '~/blocks/video/video';
+import '~/blocks/form/form';
 import '~/js/components/swiper';
 
 // import '~/blocks/scroll/scroll';
