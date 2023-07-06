@@ -1,18 +1,9 @@
 extends ../templates/template.pug
 block content
-    section.general-block.container
+    section.general-block.container.general-block--2
         .general-block__part
-            .general-block__overheading.t-h5 Есть свой автосервис?
-            h1.t-h3 
-                | Увеличьте свой
-                br
-                | доход минимум на
-            .general-block__profit
-                .general-block__profit-part.t-h-index 300
-                .general-block__profit-part
-                    div.t-h3 тыс
-                    div.t-h3 ₽/мес
-            .general-block__subprofit.t-h5 с умной робот-мойкой!
+            h1.t-h3 Автомойка робот
+            .general-block__subprofit.t-h5 бизнес без людей </br> за 60 дней с прибылью <span> от 300000 руб в месяц  </span> </br> с одного бокса
             .general-block__picture-holder
                 +picture({src:'general-block/gb.png',srcWebp:'general-block/gb.webp'})(alt='Мойка').general-block__img-source.general-block__img-source--img
             +btn({text: 'Получить бизнес-план'})(data-modal-open="modal-popup").btn-main.general-block__button
