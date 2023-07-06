@@ -71,7 +71,7 @@ const pugToHtml = PAGES.map(page => {
     return (
         new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
-            filename: pageName + '.html',
+            filename: `${pageName}/index.html`, // Изменено
             chunks,
             title: `${page.replace(/\.pug/, '')}`,
             minify: {
